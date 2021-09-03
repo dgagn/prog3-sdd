@@ -42,7 +42,15 @@ namespace Décoder
                 ConsoleExtra.Write("Décoder> ", ConsoleColor.Blue);
                 var input = Console.ReadLine();
                 if (input == "exit") break;
-                ConsoleExtra.WriteLine($"{"",9}{Décoder(input!)}\n", ConsoleColor.Green);
+                try
+                {
+                    ConsoleExtra.WriteLine($"{"",9}{Décoder(input!)}\n", ConsoleColor.Green);
+                }
+                catch (Exception e)
+                {
+                    ConsoleExtra.WriteLine($"ERREUR: Message secret invalide - {e.Message} à la fin\n",
+                        ConsoleColor.Red);
+                }
             }
 
             ConsoleExtra.WriteLine("Au revoir", ConsoleColor.DarkYellow);
