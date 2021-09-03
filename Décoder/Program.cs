@@ -16,10 +16,11 @@ namespace Décoder
 
             foreach (var datum in data)
                 if (datum.isPopper)
-                {
                     if (pile.TryPop(out var result))
                         stringBuilder.Append(result);
-                }
+                    else
+                        throw new FormatException(
+                            $"stack underflow {message.Remove(datum.index, 1).Insert(datum.index, "[*]")}");
                 else
                     pile.Push(datum.character);
 
