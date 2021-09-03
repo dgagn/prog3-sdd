@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Debug;
 
 namespace Décoder
 {
@@ -33,8 +34,18 @@ namespace Décoder
 
         private static void Main()
         {
-            var a = Décoder("123**4**5*");
-            Console.WriteLine(a);
+            ConsoleExtra.WriteLine("SDD - Application de décodage\nPar Dany Gagnon\nBasée sur: Stack\n",
+                ConsoleColor.DarkYellow);
+
+            while (true)
+            {
+                ConsoleExtra.Write("Décoder> ", ConsoleColor.Blue);
+                var input = Console.ReadLine();
+                if (input == "exit") break;
+                ConsoleExtra.WriteLine($"{"",9}{Décoder(input!)}\n", ConsoleColor.Green);
+            }
+
+            ConsoleExtra.WriteLine("Au revoir", ConsoleColor.DarkYellow);
         }
     }
 }
