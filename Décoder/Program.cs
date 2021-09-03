@@ -24,6 +24,10 @@ namespace Décoder
                 else
                     pile.Push(datum.character);
 
+            if (pile.Count != 0)
+                throw new FormatException(
+                    $"étoiles manquantes '{string.Join(string.Empty, Enumerable.Repeat('*', pile.Count))}'");
+
             return stringBuilder.ToString();
         }
 
