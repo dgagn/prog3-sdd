@@ -13,7 +13,7 @@ namespace Décoder
             var stringBuilder = new StringBuilder();
             var pile = new Stack<char>();
 
-            var data = message.Select((c, index) => new { isPopper = c == '*', index, character = c });
+            var data = message.Select((c, index) => new {isPopper = c == '*', index, character = c});
 
             foreach (var datum in data)
                 if (datum.isPopper)
